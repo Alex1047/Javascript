@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>eShop</title>
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="style_2.css">
+</head>
+<body>
+	<div id="app">
+	<header>
+		<div class="search">
+		<form class="search-form">
+        <input type="text" class="search-input" v-model="searchLine" placeholder="Введите название...">
+        <button class="search-button" @click="filterGoods()">Искать</button>
+      </form>
+		<button class="cart-button" type="button">Корзина</button>
+		</div>
+	</header>
+	<main>
+		<div class="goods-list">
+			<div class="goods-item" v-for="good in filteredGoods" :key="good.id_product">
+        	<h3>{{ good.product_name }}</h3>
+       		<p>{{ good.price }}</p>
+		</div>
+	<div class="container">
+	<div class="chat">
+		<img id="close" src="img/close.png" alt="close">
+		<div class="box-1">
+			<div class="box-2"></div>
+			<img src="img/person.png" alt="pic">
+			<p class="text-1">Тэглайн</p>
+			<p class="text-2">Консультант</p>
+		</div>
+		<div class="arrow"></div>
+		<div class="box-3">
+			<span class="message">Здравствуйте! Я могу вам<br>
+			 чем-то помочь?</span>
+		</div>
+		<span class="time">9:39</span>
+		<div class="box-4">
+			<input type="text" class="ask" placeholder="Введите сообщение и нажмите Enter">
+		</div>
+	</div>
+	</div> 
+	</main>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="main.js"></script>
+</body>
+</html>
